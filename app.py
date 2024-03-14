@@ -42,13 +42,13 @@ def predict():
     # Standardizing the data
     final_input =  scaler.transform(np.array(float_numbers_list).reshape(1, 30))
 
-    # Projecting unseen data onto same principal components
+    # Projecting unseen data onto the same principal component vector space
     final_input = pca.transform(final_input)
 
     # Displaying the final input
     print(final_input)
 
-    # Predicting the output using the linar model
+    # Predicting the output using the logistic model
     output = logistic_model.predict(np.array(final_input).reshape(1, 2))[0]
 
     # Initializing an empty string
